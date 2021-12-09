@@ -3,7 +3,7 @@
 {%     set librereporttemplate = "\"C:/Program Files/LibreOffice/share/template/common/officorr/basic-reporting-layout.ott\"" %}
 {% else %}
 {%     set firefox = "firefox-esr" %}
-{%     set librereporttemplate = "/user/lib/libreoffice/share/template/common/officorr/basic-reporting-layout.ott" %}
+{%     set librereporttemplate = "/usr/lib/libreoffice/share/template/common/officorr/basic-reporting-layout.ott" %}
 {% endif %}
 {{ firefox }}:
   pkg:
