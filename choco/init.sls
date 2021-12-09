@@ -1,0 +1,4 @@
+chocolatey
+  - pkg:
+    - installed
+
