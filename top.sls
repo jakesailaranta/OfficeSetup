@@ -1,6 +1,5 @@
 base:
+  'os:Windows':
+    - choco
   '*':
     - universal
-  'os:Windows':
-    - match: grains
-    - choco

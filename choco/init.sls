@@ -1,4 +1,4 @@
-choco_packagehandler:
-  pkg:installed:
+choco:
+  pkg.installed:
     - name: chocolatey
 
