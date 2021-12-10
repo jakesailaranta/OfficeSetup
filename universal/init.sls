@@ -1,19 +1,23 @@
 {% if "Windows" == grains["os"] %}
 {%     set firefox = "firefox-esr_x64" %}
-{%     set librereporttemplate = "\"C:/Program Files/LibreOffice/share/template/common/officorr/basic-reporting-layout.ott\"" %}
+{%     set librereporttemplate = "\"C:/Program Files/LibreOffice/share/template/common\"" %}
+{%     set pdfreader = adobereader %}
 {% else %}
 {%     set firefox = "firefox-esr" %}
-{%     set librereporttemplate = "/usr/lib/libreoffice/share/template/common/officorr/basic-reporting-layout.ott" %}
+{%     set librereporttemplate = "/usr/lib/libreoffice/share/template/common/" %}
+{%     set pdfreader = evince %}
 {% endif %}
 {{ firefox }}:
   pkg:
     - installed
 libreoffice:
   pkg:
-   - installed
+    - installed
+winrar:
+  pkg:
+    - installed
 {{ librereporttemplate }}:
-  file.managed:
-    - source: salt://universal/basic-reporting-layout.ott
+  file.recurse:
+    - source: salt://universal/common/
     - require:
       - pkg: libreoffice
-
