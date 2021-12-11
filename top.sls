@@ -3,6 +3,9 @@ base:
     - match: grain
     - choco
     - windowsuniversal
+  'os:Ubuntu':
+    - match:grain
+    - ubuntuwallpaper
   '*':
     - universal
   'media-*':
