@@ -14,12 +14,12 @@ linuxpackages:
 /etc/ufw/ufw.conf:
   file.managed:
     - source: salt://linuxuniversal/ufw.conf
-ufw:
-  - service:
-    - running
-  - watch:
-    - file: /etc/ufw/user.rules
-    - file: /etc/ufw/user6.rules
-    - file: /etc/ufw/ufw.conf
+firewall:
+  service.running:
+    - name: ufw
+    - watch:
+      - file: /etc/ufw/user.rules
+      - file: /etc/ufw/user6.rules
+      - file: /etc/ufw/ufw.conf
    
   
