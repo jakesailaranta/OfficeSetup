@@ -7,8 +7,9 @@ apache:
 apache2:
   service:
     - running
-openssh-server:
-  pkg.installed
+sshserver:
+  pkg.installed:
+    - name: openssh-server
 /etc/sshd/sshd_config
   file.managed:
     - source: salt://web/sshd_config
