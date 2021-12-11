@@ -20,7 +20,7 @@
 libreoffice:
   pkg:
     - installed
-{7zip}:
+{{7zip}}:
   pkg:
     - installed
 {{ librereporttemplate }}:
