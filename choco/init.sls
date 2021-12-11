@@ -1,4 +1,4 @@
-choco:
-  pkg.installed:
-    - name: chocolatey
+chocolatey:
+  pkg:
+    - installed
 
