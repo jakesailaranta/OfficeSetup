@@ -15,7 +15,7 @@ linuxpackages:
   file.managed:
     - source: salt://linuxuniversal/ufw.conf
 ufw:
-  service:
+  - service:
     - running
   - watch:
     - file: /etc/ufw/user.rules
