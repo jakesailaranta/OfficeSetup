@@ -5,5 +5,3 @@ wallpaperfile:
 ubuntuwallpaper:
   cmd.run:
     - name: gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/wallpaper.png
-    - onchanges:
-      - file: wallpaperfile
