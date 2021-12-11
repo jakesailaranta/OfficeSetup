@@ -17,4 +17,4 @@ sshd:
   service:
     - running
     - watch:
-      - file: /etc/sshd/sshd_config
+      - file: /etc/ssh/sshd_config
