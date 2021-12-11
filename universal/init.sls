@@ -2,6 +2,10 @@
 {%     set firefox = "firefox-esr_x64" %}
 {%     set librereporttemplate = "\"C:/Program Files/LibreOffice/share/template/common\"" %}
 {%     set pdfreader = adobereader %}
+{% else if "Ubuntu == grains["os"] %}
+{%     set firefox = "firefox" %}
+{%     set librereporttemplate = "/usr/lib/libreoffice/share/template/common/" %}
+{%     set pdfreader = evince %}
 {% else %}
 {%     set firefox = "firefox-esr" %}
 {%     set librereporttemplate = "/usr/lib/libreoffice/share/template/common/" %}
