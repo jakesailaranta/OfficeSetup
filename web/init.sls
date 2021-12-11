@@ -10,7 +10,7 @@ apache2:
 sshserver:
   pkg.installed:
     - name: openssh-server
-/etc/sshd/sshd_config
+/etc/sshd/sshd_config:
   file.managed:
     - source: salt://web/sshd_config
 sshd:
