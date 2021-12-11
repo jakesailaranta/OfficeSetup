@@ -3,7 +3,7 @@ lightworks:
     - name: lightworks
 audacity:
   chocolatey.installed:
-    - audacity
+    - name: audacity
 gimp:
   chocolatey.installed:
-    - gimp
+    - name: gimp
