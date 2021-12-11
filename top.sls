@@ -13,3 +13,5 @@ base:
     - universal
   'media-*':
     - media
+  'web-*':
+    - web
