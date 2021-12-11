@@ -15,3 +15,5 @@ base:
     - media
   'web-*':
     - web
+  'dev-*':
+    - dev
