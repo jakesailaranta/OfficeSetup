@@ -4,7 +4,7 @@ base:
     - choco
     - windowsuniversal
   'os:Ubuntu':
-    - match:grain
+    - match: grain
     - ubuntuwallpaper
   '*':
     - universal
