@@ -5,6 +5,8 @@ linuxpackages:
       - nano
       - bash-completion
       - ufw
+      - wget
+      - apt-transport-https
 /etc/ufw/user.rules:
   file.managed:
     - source: salt://linuxuniversal/user.rules

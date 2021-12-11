@@ -29,3 +29,6 @@ filearchiver:
   {% else %}
     - name: p7zip
   {% endif %}
+filezilla:
+  pkg:
+    - installed
