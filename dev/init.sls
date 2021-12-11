@@ -1,4 +1,4 @@
-  {% if grain["os"] == 'Windows' %}
+  {% if grains["os"] == 'Windows' %}
 javajdk:
   chocolatey.installed:
     - name: oracle17jdk

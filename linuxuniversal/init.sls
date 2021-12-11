@@ -6,6 +6,7 @@ linuxpackages:
       - bash-completion
       - ufw
       - wget
+      - curl
       - apt-transport-https
 /etc/ufw/user.rules:
   file.managed:
