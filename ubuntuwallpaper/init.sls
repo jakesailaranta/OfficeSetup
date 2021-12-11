@@ -4,6 +4,6 @@ wallpaperfile:
     - source: salt://ubuntuwallpaper/wallpaper.png
 ubuntuwallpaper:
   cmd.run:
-    - name: gsettings set org.gnome.desktop.background picture-uri file://usr/share/backgrounds/wallpaper.png
+    - name: gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/wallpaper.png
     - onchanges:
       - file: wallpaperfile
