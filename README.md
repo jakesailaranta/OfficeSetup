@@ -7,7 +7,7 @@ Built and tested on an environment of multiple Debian, Ubuntu and Windows virtua
 Built as the final project for Haaga-Helia University of Applied Science's "Palvelinten Hallinta" -course, run by Tero Karvinen. In it's base state, this build is best used as a guideline for setting your own environment up, though the customization does require some understanding of SaltStack's functionality and YAML. The guide below will attempt to inform how to use these states regardless.
 
 ## KNOWN ISSUES
-* The state meant for Media department boxes has functionality only for Windows boxes currently, due to installation for Linux being too involved to be able to be handled easily through SaltStack
+* The state meant for Media department boxes has functionality only for Windows boxes currently, due to installation for Lightworks on Linux being too involved to be able to be handled easily through SaltStack
 * Some packages may fail to install on initial run, only to install just fine on a repeated run. Reason behind this is unclear, hypothesis is that a connectivity issue to the repository the packages are drawn from may be happening sometimes.
 * The state changing the wallpaper for Windows machines only has the wallpaper change after a reboot of the machine. May also not work on Home release of Windows, due to the State affecting Local Group Policy.
 
