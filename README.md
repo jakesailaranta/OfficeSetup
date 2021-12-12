@@ -8,6 +8,7 @@ Built as the final project for Haaga-Helia University of Applied Science's "Palv
 
 ## KNOWN ISSUES
 * The state meant for Media department boxes has functionality only for Windows boxes currently, due to installation for Lightworks on Linux being too involved to be able to be handled easily through SaltStack
+* The state for web-server boxes is currently designed only for Linux-boxes
 * Some packages may fail to install on initial run, only to install just fine on a repeated run. Reason behind this is unclear, hypothesis is that a connectivity issue to the repository the packages are drawn from may be happening sometimes.
 * The state changing the wallpaper for Windows machines only has the wallpaper change after a reboot of the machine. May also not work on Home release of Windows, due to the State affecting Local Group Policy.
 
