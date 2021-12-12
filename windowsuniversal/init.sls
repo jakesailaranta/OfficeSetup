@@ -13,4 +13,6 @@ setwallpaper:
     - name: gpupdate.exe /force
     - onchanges:
       - lgpo: setwallpaper
-
+Enable Firewall:
+  win_firewall.enabled:
+    - name: privateprofile
