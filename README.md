@@ -1,6 +1,6 @@
 # SaltStack architecture for an office environment
 
-A base template of SaltStack states and a Highstate for configuration of Windows and Debian-based (Debian/Ubuntu) boxes. In it's current state it installs various essential programs to all machines, sets up a method to add document templates to LibreOffice for everyone in the environment, change wallpapers and install some additional purpose-specific programs dependent on the department the box has been assigned to (possible departments currently: Development, Media and Webserver).
+A base template of SaltStack states and a Highstate for configuration of Windows Enterprise and Debian-based (Debian/Ubuntu) boxes. In it's current state it installs various essential programs to all machines, sets up a method to add document templates to LibreOffice for everyone in the environment, change wallpapers and install some additional purpose-specific programs dependent on the department the box has been assigned to (possible departments currently: Development, Media and Webserver).
 
 Built and tested on an environment of multiple Debian, Ubuntu and Windows virtual machines, with Salt Master ran specifically on Debian-11 Bullseye. Functionality in other Linux distros is not guaranteed.
 
@@ -9,6 +9,7 @@ Built as the final project for Haaga-Helia University of Applied Science's "Palv
 ## KNOWN ISSUES
 * The state meant for Media department boxes has functionality only for Windows boxes currently, due to installation for Linux being too involved to be able to be handled easily through SaltStack
 * Some packages may fail to install on initial run, only to install just fine on a repeated run. Reason behind this is unclear, hypothesis is that a connectivity issue to the repository the packages are drawn from may be happening sometimes.
+* The state changing the wallpaper for Windows machines only has the wallpaper change after a reboot of the machine. May also not work on Home release of Windows, due to the State affecting Local Group Policy.
 
 ## HOW TO
 ### Install this build
