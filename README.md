@@ -1,21 +1,23 @@
 # SaltStack architecture for an office environment
 
-A base template of SaltStack states and a Highstate for configuration of Windows and Debian-based (Debian/Ubuntu) boxes. In it's current state it installs various essential programs to all machines, sets up a method to add document templates to LibreOffice for everyone in the environment, change wallpapers and install some additional purpose-specific programs dependent on the department the box has been assigned to (possible departments currently: Development, Media and Webserver).
+A base template of SaltStack states and a Highstate for configuration of Windows Enterprise and Debian-based (Debian/Ubuntu) boxes. In it's current state it installs various essential programs to all machines, sets up a method to add document templates to LibreOffice for everyone in the environment, change wallpapers and install some additional purpose-specific programs dependent on the department the box has been assigned to (possible departments currently: Development, Media and Webserver).
 
 Built and tested on an environment of multiple Debian, Ubuntu and Windows virtual machines, with Salt Master ran specifically on Debian-11 Bullseye. Functionality in other Linux distros is not guaranteed.
 
 Built as the final project for Haaga-Helia University of Applied Science's "Palvelinten Hallinta" -course, run by Tero Karvinen. In it's base state, this build is best used as a guideline for setting your own environment up, though the customization does require some understanding of SaltStack's functionality and YAML. The guide below will attempt to inform how to use these states regardless.
 
 ## KNOWN ISSUES
-* The state meant for Media department boxes has functionality only for Windows boxes currently, due to installation for Linux being too involved to be able to be handled easily through SaltStack
+* The state meant for Media department boxes has functionality only for Windows boxes currently, due to installation for Lightworks on Linux being too involved to be able to be handled easily through SaltStack
+* The state for web-server boxes is currently designed only for Linux-boxes
 * Some packages may fail to install on initial run, only to install just fine on a repeated run. Reason behind this is unclear, hypothesis is that a connectivity issue to the repository the packages are drawn from may be happening sometimes.
+* The state changing the wallpaper for Windows machines only has the wallpaper change after a reboot of the machine. May also not work on Home release of Windows, due to the State affecting Local Group Policy.
 
 ## HOW TO
 ### Install this build
 The choice of programs in this build is largely arbitrary and made purely for development purposes, but if you want to take this setup wholesale and either customize it from there or outright use what is already there without further edit, do the following:
 * Install salt-master on your intended controller (must be a Linux machine; salt-master is not available for Windows). `sudo apt-get install salt-master` should work at least on Debian distro.
 * Install salt-minion on all the machines you intend to be controlled by Salt. Tutorials on how to do this for various OS can be found in: [https://repo.saltproject.io](https://repo.saltproject.io)
-* On all minions, set the master as your controller's IP, and prepend the ID of the minions either with 'dev-' for development, 'media-' for media or 'web-' for webserver (ie: dev-01). On linux machines you can set these through `/etc/salt/minion`, on Windows you are given the option during the installation wizard. Note that on Linux-machines after changing the configuration file you will also need to restart the minion serive (`sudo systemctl restart salt-minion`) for the changes to take effect.
+* On all minions, set your controller's IP as the master, and prepend the ID of the minions either with 'dev-' for development, 'media-' for media or 'web-' for webserver (ie: dev-01). General-use office machines without department-specific functionality can have any ID. On linux machines you can set these through `/etc/salt/minion`, on Windows you are given the option during the installation wizard. Note that on Linux-machines after changing the configuration file you will also need to restart the minion service (`sudo systemctl restart salt-minion`) for the changes to take effect.
 * On the controller, run the command `sudo salt-key -A` and accept all the keys.
 * On Windows, enable both firewall rules named `File and Printer Sharing (Echo Request - ICMPv4-In)`.
 * git-pull this repository to your Master's `/srv/salt/` directory.
