@@ -7,7 +7,7 @@ eclipse:
     - name: eclipse
   {% else %}
 java:
-  package.installed:
+  pkg.installed:
     - pkgs:
       - ca-certificates-java
       - java-common 
